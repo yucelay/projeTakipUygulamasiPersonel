@@ -2,16 +2,17 @@ package com.example.yucel.projetakipuygulamasipersonel;
 
 public class gorevlerDb {
     int projeId;
-    String gorev_tarihi,gorev_basligi,gorev_aciklamasi;
+    String gorev_tarihi,gorev_basligi,gorev_aciklamasi,gorev_key;
 
     public gorevlerDb() {
     }
 
-    public gorevlerDb(int projeId, String gorev_tarihi, String gorev_basligi, String gorev_aciklamasi) {
+    public gorevlerDb(int projeId, String gorev_tarihi, String gorev_basligi, String gorev_aciklamasi,String gorev_key) {
         this.projeId = projeId;
         this.gorev_tarihi = gorev_tarihi;
         this.gorev_basligi = gorev_basligi;
         this.gorev_aciklamasi = gorev_aciklamasi;
+        this.gorev_key = gorev_key;
     }
 
 
@@ -45,5 +46,13 @@ public class gorevlerDb {
 
     public void setGorev_aciklamasi(String gorev_aciklamasi) {
         this.gorev_aciklamasi = gorev_aciklamasi;
+    }
+
+    public String getGorev_key() {
+        return gorev_key;
+    }
+
+    public void setGorev_key(String gorev_key) {
+        this.gorev_key = gorev_key;
     }
 }

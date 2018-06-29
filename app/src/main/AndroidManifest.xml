@@ -20,7 +20,8 @@
         <activity android:name=".yapilacaklarActivity" />
         <activity android:name=".yeniGorevActivity" />
         <activity android:name=".gorevlerActivity" />
-        <activity android:name=".tamamlananlarActivity"></activity>
+        <activity android:name=".tamamlananlarActivity" />
+        <activity android:name=".testActivity"></activity>
     </application>
 
 </manifest>

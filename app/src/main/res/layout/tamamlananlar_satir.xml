@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:background="@drawable/list_view_satir_border">
 
     <ImageView
         android:id="@+id/yapilacakImageView"
@@ -30,25 +31,32 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp">
 
         <Button
-            android:text="Tamamlandi"
+            android:text="Onayla"
             android:id="@+id/tamamlanmaBilgisiButon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
             android:textSize="8sp"
             android:width="10dp"
-            android:layout_marginRight="8dp" />
+            android:layout_marginRight="8dp"
+            android:drawableLeft="@drawable/onayla_icon"
+            android:background="@drawable/login_buton_border"/>
 
         <Button
             android:text="İptal Et"
             android:id="@+id/tamamlanmaIptalButon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
             android:textSize="8sp"
             android:width="10dp"
-            android:layout_marginRight="8dp" />
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/kapat_icon"
+            android:background="@drawable/login_buton_border"/>
 
 
     </LinearLayout>

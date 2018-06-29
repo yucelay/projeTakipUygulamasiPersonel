@@ -1,43 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".yapilacaklarActivity">
+    tools:context=".yapilacaklarActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background6">
 
-    <Button
-        android:id="@+id/yapilacakKaydetButon"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/menu_icon_background_border">
+
+        <TextView
+            android:id="@+id/menuProjeBilgileriTv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Yapılacaklar" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Kaydet"
-        app:layout_constraintStart_toEndOf="@+id/yapilacakEditText"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center">
 
     <EditText
         android:id="@+id/yapilacakEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
         android:hint="yapilacak"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingLeft="8dp"
+        android:background="@drawable/login_text_border"/>
 
+        <Button
+            android:id="@+id/yapilacakKaydetButon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/kaydet_icon"
+            android:text="Kaydet" />
+    </LinearLayout>
     <ListView
         android:id="@+id/yapilacakListView"
-        android:layout_width="368dp"
-        android:layout_height="439dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/yapilacakEditText" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:dividerHeight="6dp"/>
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

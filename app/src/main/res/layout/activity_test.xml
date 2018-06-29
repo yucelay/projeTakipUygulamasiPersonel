@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#999999"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".testActivity">
+
+
+    <TextView
+        android:id="@+id/projeBilgisiTestSayfasi"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="-8dp"
+        android:background="@drawable/login_buton_border"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#FFF"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/projeBilgisiTestSayfasi2"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="Test Edilme Durumu :"
+            android:textColor="#000"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/projeTestDurum"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:paddingLeft="4dp"
+            android:text="Test Edilmedi"
+            android:textColor="#DD0000"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/butonTestActivity"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_buton_border"
+        android:text="Test Edildi" />
+
+
+</LinearLayout>

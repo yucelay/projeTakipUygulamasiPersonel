@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,16 +36,22 @@ public class yapilacaklarActivity extends AppCompatActivity {
         yapilacakKaydetButon = findViewById(R.id.yapilacakKaydetButon);
         yapilacakEditText = findViewById(R.id.yapilacakEditText);
         yapilacakListView = findViewById(R.id.yapilacakListView);
-        yapilacaklarAdapter = new ArrayAdapter<>(yapilacaklarActivity.this, android.R.layout.simple_list_item_1,yapilacakArray);
+        yapilacaklarAdapter = new ArrayAdapter<>(yapilacaklarActivity.this, R.layout.listview_simple_row,yapilacakArray);
         yapilacakListView.setAdapter(yapilacaklarAdapter);
 
-        Bundle yapilacaklarProjeID = getIntent().getExtras();
+        final Bundle yapilacaklarProjeID = getIntent().getExtras();
         gelenProjeId = yapilacaklarProjeID.getInt("projeID");
 
         yapilacakKaydetButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               yapilacakEkle(yapilacakEditText.getText().toString());
+                if(yapilacakEditText.getText().toString().trim().equals("")){
+                    Toast.makeText(yapilacaklarActivity.this,"Alanı boş geçmeyiniz",Toast.LENGTH_SHORT).show();
+                }else{
+                    yapilacakEkle(yapilacakEditText.getText().toString());
+                    Toast.makeText(yapilacaklarActivity.this,"Kaydedildi",Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 yapilacaklariGetirMetodu();
@@ -56,6 +63,7 @@ yapilacaklariGetirMetodu();
        String yapilacakKey = yapilacakRef.push().getKey();
        DatabaseReference yapilacakRefKey = db.getReference("yapilacak/"+ yapilacakKey);
        yapilacakRefKey.setValue(new yapilacaklarDb(yapilacakAdi,0,gelenProjeId,yapilacakKey));
+       yapilacakEditText.setText("");
     }
 
     public void yapilacaklariGetirMetodu(){
@@ -64,11 +72,13 @@ yapilacaklariGetirMetodu();
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 yapilacakArray.clear();
+                int sira=0;
                 for (DataSnapshot gelenler:dataSnapshot.getChildren()){
                     int projeID = gelenler.getValue(yapilacaklarDb.class).getProjeId();
                     if(projeID==gelenProjeId){
+                        sira++;
                         String personelAdiSoyadi = gelenler.getValue(yapilacaklarDb.class).getYapilacakAdi();
-                        yapilacakArray.add(personelAdiSoyadi);
+                        yapilacakArray.add(sira+ ". "+personelAdiSoyadi);
                         yapilacaklarAdapter.notifyDataSetChanged();
                     }
 

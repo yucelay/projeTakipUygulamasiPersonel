@@ -1,65 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background6"
+    android:orientation="vertical"
+
     tools:context=".yeniGorevActivity">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:paddingTop="0dp"
-        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Yeni Görev Ekle"
+        android:gravity="center"
+        android:textColor="#FF5500"
+        android:textSize="20dp"
+        android:paddingTop="10dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/menu_icon_background_border" />
+
+
+    <TextView
+        android:id="@+id/projeBilgisiTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Yeni Görev Ekle"
+        android:paddingLeft="30dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
+        android:textColor="#AAAAAA"
+        android:layout_gravity="center_vertical"
+        android:textSize="12dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/menu_icon_background_border" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
 
     <EditText
         android:id="@+id/gorevBasligiEditText"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_text_border"
         android:ems="10"
         android:hint="Görev Başlığı"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:padding="6dp"
+        android:textColor="#800000"
+        android:textSize="18dp" />
 
     <EditText
         android:id="@+id/gorevAciklamasiEditText"
-        android:layout_width="215dp"
-        android:layout_height="167dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_text_border"
         android:ems="10"
         android:gravity="top"
         android:hint="Görev Açıklaması"
         android:inputType="textMultiLine"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gorevBasligiEditText" />
+        android:padding="6dp"
+        android:textSize="14dp" />
 
-    <Button
-        android:id="@+id/yeniGorevEkleButon"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Kaydet"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gorevAciklamasiEditText" />
+        android:layout_height="wrap_content">
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/yeniGorevEkleButon"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_buton_border"
+            android:text="Kaydet"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/kaydet_icon"/>
+
+        <Button
+            android:id="@+id/yeniGorevKapatButon"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_buton_border"
+            android:text="Kapat"
+            android:drawableLeft="@drawable/kapat_icon"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

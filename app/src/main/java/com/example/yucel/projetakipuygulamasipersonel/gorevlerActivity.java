@@ -26,12 +26,15 @@ public class gorevlerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gorevler);
         gorevlerListView = findViewById(R.id.gorevlerListesiListView);
+
         db = FirebaseDatabase.getInstance();
         gorevlerAdaptor = new gorevlerAdaptor(gorevlerActivity.this,gorevlerListesi);
         gorevlerListView.setAdapter(gorevlerAdaptor);
         Bundle gorevlerBundle = getIntent().getExtras();
         gelenProjeID = gorevlerBundle.getInt("projeID");
         tumGorevlerMethod();
+
+
     }
 
     public void tumGorevlerMethod(){
@@ -45,9 +48,10 @@ public class gorevlerActivity extends AppCompatActivity {
                     String gorevTarihi = gelenler.getValue(gorevlerDb.class).getGorev_tarihi();
                     String gorevBasligi = gelenler.getValue(gorevlerDb.class).getGorev_basligi();
                     String gorevAciklamasi = gelenler.getValue(gorevlerDb.class).getGorev_aciklamasi();
+                    String gorevKey = gelenler.getValue(gorevlerDb.class).getGorev_key();
 
                     if(gelenProjeID == projeID){
-                        gorevlerListesi.add(new gorevlerDb(projeID,gorevTarihi,gorevBasligi,gorevAciklamasi));
+                        gorevlerListesi.add(new gorevlerDb(projeID,gorevTarihi,gorevBasligi,gorevAciklamasi,gorevKey));
                     }
                 }
                 gorevlerAdaptor.notifyDataSetChanged();
