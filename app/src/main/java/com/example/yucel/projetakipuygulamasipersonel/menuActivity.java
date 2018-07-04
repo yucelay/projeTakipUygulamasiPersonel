@@ -1,9 +1,12 @@
 package com.example.yucel.projetakipuygulamasipersonel;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -100,4 +103,27 @@ public class menuActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(menuActivity.this);
+            alert.setTitle("Çıkmak İstediğinizden Emin misiniz ?");
+            alert.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface arg0, int arg1) {
+                    finish();
+                    Intent loginSayfasi = new Intent(menuActivity.this, MainActivity.class);
+                    startActivity(loginSayfasi);
+                }
+            });
+            alert.setNegativeButton("Hayır", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface arg0, int arg1) {
+                }
+            });
+
+            alert.show();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

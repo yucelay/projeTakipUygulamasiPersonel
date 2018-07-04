@@ -4,66 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@drawable/personel_login_background"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@drawable/personel_login_background">
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/login_buton_border"
+        android:src="@drawable/prodrom_logo" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Proje Takip Uygulaması\nPersonel Girişi"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_marginTop="50dp"
-        app:srcCompat="@drawable/usericonpersonel"
-        />
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/usericonpersonel" />
 
     <EditText
         android:id="@+id/projeIdEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Proje ID"
-        android:textColor="#800000"
-        android:ems="10"
-        android:inputType="number"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/login_text_border"
         android:drawableLeft="@drawable/proje_id_icon"
-        android:background="@drawable/login_text_border"/>
+        android:ems="10"
+        android:hint="Proje ID"
+        android:onClick="itemClickedProjeId"
+        android:inputType="number"
+        android:textColor="#800000" />
 
     <EditText
         android:id="@+id/sifreEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@drawable/login_text_border"
+        android:drawableLeft="@drawable/login_password_icon"
         android:ems="10"
         android:hint="Şifre"
-        android:textColor="#800000"
         android:inputType="textPassword"
-        android:drawableLeft="@drawable/login_password_icon"
+        android:onClick="itemClickedSifre"
+        android:textColor="#800000" />
 
-        android:background="@drawable/login_text_border"/>
+    <TextView
+        android:id="@+id/loginMesaj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="14dp"
+        android:textColor="#770000"
+        android:textStyle="bold" />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
+        android:buttonTint="#00AA00"
+        android:onClick="itemClicked"
         android:text="Beni Hatırla"
-        android:textColorHint="#000"/>
+        android:textColorHint="#000" />
 
     <Button
         android:id="@+id/girisYapButon"
         android:layout_width="200dp"
         android:layout_height="50dp"
-android:layout_marginTop="10dp"
-        android:text="Giriş Yap"
-        android:background="@drawable/login_buton_border"/>
+        android:layout_marginTop="10dp"
+        android:background="@drawable/login_buton_border"
+        android:text="Giriş Yap" />
+
 </LinearLayout>
